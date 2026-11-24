@@ -1,0 +1,23 @@
+{
+  "name": "firestock-tcc-completo",
+  "private": true,
+  "description": "FireStock: app mobile (Expo) + painel web da empresa + painel web do administrador (Vite) no mesmo repositório, usando o mesmo Supabase.",
+  "scripts": {
+    "install:all": "npm --prefix apps/web-empresa install && npm --prefix apps/web-admin install && npm --prefix apps/mobile install",
+    "install:web": "npm --prefix apps/web-empresa install",
+    "install:admin": "npm --prefix apps/web-admin install",
+    "install:mobile": "npm --prefix apps/mobile install",
+    "dev:web": "npm --prefix apps/web-empresa run dev",
+    "dev:admin": "npm --prefix apps/web-admin run dev",
+    "dev:mobile": "npm --prefix apps/mobile run start",
+    "build:web": "npm --prefix apps/web-empresa run build",
+    "build:admin": "npm --prefix apps/web-admin run build",
+    "test:web": "npm --prefix apps/web-empresa run test",
+    "test:admin": "npm --prefix apps/web-admin run test",
+    "test:mobile": "npm --prefix apps/mobile run test",
+    "test:functions": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test \"supabase/functions/**/*.test.mjs\"",
+    "typecheck:web": "npm --prefix apps/web-empresa run typecheck",
+    "typecheck:admin": "npm --prefix apps/web-admin run typecheck",
+    "typecheck:mobile": "npm --prefix apps/mobile run typecheck"
+  }
+}

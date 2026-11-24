@@ -1,0 +1,8 @@
+node_modules
+dist
+.expo
+android
+.git
+.env*
+docs
+*.md
