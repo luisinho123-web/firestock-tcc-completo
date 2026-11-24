@@ -151,7 +151,6 @@ O "copia e cola" segue o padrão EMV do Banco Central (`utils/pix.ts`, com CRC-1
 - É um Pix **estático**: o app NÃO é avisado do pagamento. Confirmação automática exige uma API de pagamento (opção 2).
 - Testes: `npm run test` em `apps/mobile` (CRC, campos, valores, matriz do QR).
 
-## O que foi RECRIADO no mobile (o original não veio no pacote) — confira
 
 Base: planos em `apps/mobile/docs/superpowers/plans/` (código de supabase, auth, viacep, mapbox, profile) e
 o esquema do banco que você enviou. Onde não havia plano, escrevi a partir de como as telas chamam o serviço.
@@ -167,12 +166,6 @@ o esquema do banco que você enviou. Onde não havia plano, escrevi a partir de 
 | `utils/format, masks, seeded, share, currency, date, price-compare, validation` | branch `claude/wonderful-tesla-pppluq` do GitHub (26/set, podem estar atrás) |
 | `package.json`, `tsconfig.json` | reconstruídos das versões que estavam em `node_modules` |
 
-### Suposições a conferir
-- Avatar: bucket `avatars`, caminho `{id-do-usuário}/avatar.ext` (vem do plano).
-- CPF e telefone são gravados **só com dígitos** e exibidos com máscara.
-- Produtos sem coluna de unidade aparecem como `un`; entrega usa valores neutros (20–40 min, taxa 0), porque o banco não guarda isso.
-- Pedidos: o histórico e a simulação de entrega continuam no aparelho, mas cada pedido agora também é uma reserva no banco (ver "Pedidos: retirar no local ou delivery").
-- A senha mínima do mobile é 6 (`MIN_PASSWORD_LENGTH`); o web-empresa exige 8.
 
 ### Fora do pacote
 - `supabase/functions`: `welcome-email`, `partner-approved-email` e `delete-account` já rodam no Supabase
@@ -180,8 +173,3 @@ o esquema do banco que você enviou. Onde não havia plano, escrevi a partir de 
 - Typecheck do mobile (`npm run typecheck:mobile`): ~50 erros só de TIPO de biblioteca
   (`ImageSource` do expo-image, `focus` do TextInput, `beforeRemove` do react-navigation). Não impedem o empacotamento;
   não investiguei se já existiam no original.
-
-## Origem dos arquivos
-- mobile: `Downloads/Projeto Firestok - Versão atualizada/projeto aplicativo(mobile)`
-- web-empresa: `Downloads/web-empresa/web-empresa`
-- Nada dos originais foi alterado ou apagado.
